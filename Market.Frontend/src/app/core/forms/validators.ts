@@ -35,8 +35,8 @@ export class AppValidators {
   }
 
   /**
-   * Apsolutni http(s) URL ili ruta aplikacije koja počinje sa "/" (npr. "/search?categoryId=2").
-   * "//nesto" nije ruta nego adresa drugog servera. Greška: { urlOrPath: true }
+   * Absolute http(s) URL or an application route starting with "/" (e.g. "/converter?from=EUR").
+   * "//something" is not a route but the address of another server. Error: { urlOrPath: true }
    */
   static httpUrlOrAppPath(control: AbstractControl): ValidationErrors | null {
     const value = control.value;

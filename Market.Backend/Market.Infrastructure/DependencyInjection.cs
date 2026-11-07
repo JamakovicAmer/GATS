@@ -153,7 +153,6 @@ public static class DependencyInjection
         }
 
         services.AddSingleton<ICacheService, CacheService>();
-        services.AddSingleton<ICatalogCacheVersionService, CatalogCacheVersionService>();
     }
 
     /// <summary>

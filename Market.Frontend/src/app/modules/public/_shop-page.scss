@@ -1,6 +1,6 @@
-// Zajednički stilovi stranica prodavnice (korpa, checkout, konvertor).
-// Koristi se kao: @use '../shop-page';  pa  .cart-page { @include shop-page.page; }
-// Mixini (a ne gotove klase) → u CSS komponente ulazi samo ono što komponenta koristi.
+// Shared styles for public pages (currently the currency converter).
+// Usage: @use '../shop-page';  then  .converter-page { @include shop-page.page; }
+// Mixins (not ready-made classes) → a component's CSS only contains what the component uses.
 
 $primary-blue: #4a90e2;
 $light-blue: #e8f4fd;

@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { CurrentUserService } from '../../../core/services/auth/current-user.service';
 
 /**
- * Početna stranica za prijavljene korisnike koji nisu admin (ruta /client).
- * Ovdje (i kao nove child rute u client-routing-module.ts) idu funkcionalnosti za kupce.
+ * Home page for signed-in users who are not administrators (route /client).
+ * Features for these users go here (and as new child routes in client-routing-module.ts).
  */
 @Component({
   selector: 'app-client-home',

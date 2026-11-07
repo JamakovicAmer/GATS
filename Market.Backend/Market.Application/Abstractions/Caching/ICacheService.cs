@@ -7,16 +7,12 @@ namespace Market.Application.Abstractions.Caching;
 /// with a non-empty <c>ConnectionStrings:Redis</c> it runs on Redis, and handlers do not change.
 /// </para>
 /// <para>
-/// Example — cache the public catalog home page (GetCatalogHomeQueryHandler) for 5 minutes:
+/// Example: cache a public, rarely changing list for 5 minutes:
 /// <code>
-/// var version = await catalogCacheVersion.GetVersionAsync(ct);
-/// var key = $"catalog:v{version}:home:c{categoryLimit}:p{productLimit}";
-///
-/// var dto = await cache.GetOrCreateAsync(key, token => LoadHomeFromDatabaseAsync(token), TimeSpan.FromMinutes(5), ct);
+/// var dto = await cache.GetOrCreateAsync("lookups:cities", token => LoadCitiesAsync(token), TimeSpan.FromMinutes(5), ct);
 /// </code>
-/// Every handler that changes the catalog (products, categories, promotions) then calls
-/// <see cref="ICatalogCacheVersionService.BumpVersionAsync"/> after <c>SaveChangesAsync</c>,
-/// so the next request uses a new key and reads fresh data.
+/// Handlers that change the cached data must make sure stale entries are not served, e.g. by
+/// including a version number in the key and increasing it after <c>SaveChangesAsync</c>.
 /// </para>
 /// </summary>
 public interface ICacheService
