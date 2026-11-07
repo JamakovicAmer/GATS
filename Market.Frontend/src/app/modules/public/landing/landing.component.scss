@@ -1,6 +1,6 @@
-// Početna (landing) stranica
+// Landing page
 
-// === VARIJABLE ===
+// === VARIABLES ===
 $primary-blue: #4a90e2;
 $light-blue: #e8f4fd;
 $lighter-blue: #f5faff;
@@ -124,7 +124,7 @@ $white: #ffffff;
 .brand-name {
   font-size: 48px;
   font-weight: 700;
-  // vlastiti line-height: naslijeđeni (20px iz Material teme) odsijeca gradient tekst
+  // own line-height: the inherited one (20px from the Material theme) cuts off the gradient text
   line-height: 1.2;
   color: $dark-blue;
   margin: 0;
@@ -256,85 +256,6 @@ $white: #ffffff;
     left: 100px;
     animation-delay: 2s;
   }
-}
-
-// === KATALOG (promocije, kategorije, proizvodi sa /Catalog/home) ===
-.catalog-section {
-  @include container;
-  padding: 48px 20px 0;
-
-  // prijavljen korisnik nema CTA sekciju ispod
-  &:last-child {
-    padding-bottom: 64px;
-  }
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.section-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: $text-dark;
-  margin: 0 0 16px 0;
-
-  @media (max-width: 768px) {
-    font-size: 28px;
-  }
-}
-
-.section-subtitle {
-  font-size: 18px;
-  color: $text-light;
-  margin: 0;
-}
-
-.category-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-.category-chip {
-  border-radius: 24px;
-  background: $white;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-.section-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-}
-
-.empty-text {
-  text-align: center;
-  color: $text-light;
-}
-
-// učitavanje / greška
-.state-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  padding: 64px 20px;
-  color: $text-light;
-}
-
-.state-icon {
-  font-size: 48px;
-  width: 48px;
-  height: 48px;
-  color: #c62828;
 }
 
 // === CTA SECTION ===
