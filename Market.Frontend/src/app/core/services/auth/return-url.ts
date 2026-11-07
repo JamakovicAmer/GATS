@@ -5,7 +5,7 @@
  * That is why after login we go ONLY to a path inside the application; otherwise someone could
  * "return" the user to a foreign site that looks like ours (open redirect).
  *
- * Allowed:   "/client/profile", "/admin/exchange-rates?currency=EUR"
+ * Allowed:   "/client/profile", "/client/profile?tab=password"
  * Rejected:  "https://evil.com", "//evil.com", "/\evil.com", "javascript:...", "/auth/..."
  */
 export function isSafeReturnUrl(url: string | null | undefined): url is string {

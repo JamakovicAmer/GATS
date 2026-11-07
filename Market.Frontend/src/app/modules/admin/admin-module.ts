@@ -3,22 +3,17 @@ import {NgModule} from '@angular/core';
 import {AdminRoutingModule} from './admin-routing-module';
 import {AdminLayoutComponent} from './admin-layout/admin-layout.component';
 import {SharedModule} from '../shared/shared-module';
-import {AccountModule} from '../account/account-module';
-import { ExchangeRatesComponent } from './finance/exchange-rates/exchange-rates.component';
-import { AdminSettingsComponent } from './admin-settings/admin-settings.component';
+import {AdminHomeComponent} from './admin-home/admin-home.component';
 
 
 @NgModule({
   declarations: [
     AdminLayoutComponent,
-    ExchangeRatesComponent,
-    AdminSettingsComponent,
+    AdminHomeComponent,
   ],
   imports: [
     AdminRoutingModule,
     SharedModule,
-    // "My profile" (/admin/profile) – same page as /client/profile
-    AccountModule,
   ]
 })
 export class AdminModule { }
