@@ -17,6 +17,19 @@ Starter sadrži i gotove primjere (korpa, checkout, narudžbe kupca, promocije, 
 - SQL Server na `localhost,1433`, korisnik `sa`, lozinka `test` (connection string je u `Market.Backend/Market.API/appsettings.json`)
 - Repozitorij klonirajte u kratak folder (npr. `C:\rs1`) i jednom uključite duge putanje: `git config --global core.longpaths true`
 
+## Local configuration (user secrets)
+
+If your local SQL Server does not match the default connection string (for example it accepts only Windows authentication), override it with user secrets instead of editing `appsettings.json`. Secrets are stored outside the repository (`%APPDATA%\Microsoft\UserSecrets\<UserSecretsId>\secrets.json`) and are loaded only in the `Development` environment.
+
+From the `Market.Backend` folder:
+
+```bash
+dotnet user-secrets set "ConnectionStrings:Main" "Server=localhost;Database=Market2026;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True" --project Market.API
+dotnet user-secrets list --project Market.API
+```
+
+Remove an override with `dotnet user-secrets remove "ConnectionStrings:Main" --project Market.API`. Other settings (for example `Email:Smtp:*`) can be overridden the same way. Never commit real passwords or keys.
+
 ## Pokretanje backenda
 
 Jednom na računaru (HTTPS certifikat za localhost):
